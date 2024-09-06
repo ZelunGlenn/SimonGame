@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Simon</title>
+</head>
+
+<body>
+  	<!--Start Background Animation Body-->
+    <div class="area">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!--End Background Animation Body-->
+
+    <div class="w-full h-screen flex flex-col items-center">
+      <h1 class="m-20">
+        Press A Key to Start
+      </h1>
+      <div class="grid grid-cols-2 gap-10">
+        <div class="box bg-green" id="green"></div>
+        <div class="box bg-red-500" id="red"></div>
+        <div class="box bg-yellow-700" id="yellow"></div>
+        <div class="box bg-blue-500" id="blue"></div>
+      </div>
+    </div>
+
+
+
+    
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
