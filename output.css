@@ -562,12 +562,17 @@ h1 {
 }
 
 .box {
+  pointer-events: none;
   height: 10rem;
   width: 10rem;
   border-radius: 1.5rem;
   border-width: 8px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.blink {
+  animation: blinker 1s linear;
 }
 
 .m-20 {
@@ -624,6 +629,16 @@ h1 {
 .bg-yellow-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(161 98 7 / var(--tw-bg-opacity));
+}
+
+.enable-pointer {
+  pointer-events: auto;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 /*Start Animations*/

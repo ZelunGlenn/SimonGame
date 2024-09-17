@@ -11,8 +11,24 @@
 
 @layer components {
   .box {
-    @apply h-40 w-40 border-8 border-black rounded-3xl
+    @apply h-40 w-40 border-8 border-black rounded-3xl pointer-events-none
   }
+
+	.blink {
+		animation: blinker 1s linear;
+	}
+}
+
+@keyframes blinker {
+	50% { 
+		opacity: 0; 
+	}
+}
+
+@layer utilities {
+	.enable-pointer {
+		pointer-events: auto;
+	}
 }
 
 
