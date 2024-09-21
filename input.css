@@ -13,15 +13,12 @@
   .box {
     @apply h-40 w-40 border-8 border-black rounded-3xl pointer-events-none
   }
-
 	.blink {
 		animation: blinker 1s linear;
 	}
-
 	.bright {
 		animation: brighter 1s linear;
 	}
-
 }
 
 @keyframes blinker {

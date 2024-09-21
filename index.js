@@ -34,7 +34,9 @@ const userInput = () => {
 const startGame = async () => {
 var gameOver = false
 var level = 1
+
 while (!gameOver) {
+    $('h1').text('Level:' + level)
 
   // generate random sequence for each level, convert to curesponding color box, add and remove blink class to them
     var sequence = []
@@ -57,6 +59,8 @@ while (!gameOver) {
     // remove all animations
     $('.box').removeClass('blink')
 
+    console.log(sequence)
+
     // allow user to type
     enableClick()
     
@@ -67,8 +71,14 @@ while (!gameOver) {
       userSequence.push(input)
     }
 
+
     // Once user input is full, disable click
     disableClick()
+
+
+    // wait all animation to finish then remove all animations
+    await new Promise((resolve) => setTimeout(resolve, 1000 * level))
+    $('.box').removeClass('bright')
 
     // Check result is right or wrong
     var isSame = userSequence.every((element, index) => {
@@ -88,8 +98,12 @@ while (!gameOver) {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
   }
-  console.log('Game Over')
+  $('h1').text('Game Over')
 }
 
-
-startGame()
+$(document).on('keypress', (e) => {
+  console.log(e.key)
+  if (e.key === 'a') {
+    startGame()
+  }
+})
