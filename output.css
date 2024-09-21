@@ -575,6 +575,10 @@ h1 {
   animation: blinker 1s linear;
 }
 
+.bright {
+  animation: brighter 1s linear;
+}
+
 .m-20 {
   margin: 5rem;
 }
@@ -638,6 +642,13 @@ h1 {
 @keyframes blinker {
   50% {
     opacity: 0;
+  }
+}
+
+@keyframes brighter {
+  50% {
+    --tw-brightness: brightness(2);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }
 

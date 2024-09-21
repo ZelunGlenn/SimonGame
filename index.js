@@ -20,7 +20,13 @@ const disableClick = () => {
 const userInput = () => {
   return new Promise ((resolve) => {
     $('.box').one('click', (e) => {
-      resolve(e.target.id)
+      // when click event happened the animation for that element occurs
+      $('#' + e.target.id).removeClass('bright')
+      setTimeout(() => {
+        $('#' + e.target.id).addClass('bright')
+        resolve(e.target.id)
+      }, 50);
+
     })
   })
 }
@@ -69,6 +75,8 @@ while (!gameOver) {
       return element === sequence[index]
     })
 
+
+    
     if (isSame) {
       console.log('Correct')
       level++
@@ -76,6 +84,8 @@ while (!gameOver) {
       console.log('Wrong')
       gameOver = true
     }
+
+    await new Promise((resolve) => setTimeout(resolve, 2000))
 
   }
   console.log('Game Over')

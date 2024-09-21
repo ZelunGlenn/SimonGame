@@ -18,11 +18,21 @@
 		animation: blinker 1s linear;
 	}
 
+	.bright {
+		animation: brighter 1s linear;
+	}
+
 }
 
 @keyframes blinker {
 	50% { 
 		opacity: 0; 
+	}
+}
+
+@keyframes brighter {
+	50% {
+		@apply brightness-200;
 	}
 }
 
